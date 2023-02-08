@@ -18,7 +18,7 @@ public class PlayerLocomotion : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private float rotateX, rotateY;
 
-    
+
     void Start()
     {
         Cursor.visible = false;
@@ -26,7 +26,7 @@ public class PlayerLocomotion : MonoBehaviour
         SetCurrentCamera();
     }
 
-    
+
     void Update()
     {
         Locomotion();
@@ -37,7 +37,7 @@ public class PlayerLocomotion : MonoBehaviour
     void SetCurrentCamera()
     {
         SwitchPerspective switchPerspective = GetComponent<SwitchPerspective>();
-        if(switchPerspective.GetPerspective() == SwitchPerspective.Perspective.First)
+        if (switchPerspective.GetPerspective() == SwitchPerspective.Perspective.First)
         {
             playerContainer = gameObject.transform.Find("Container1P");
             cameraContainer = playerContainer.transform.Find("Camera1PContainer");
@@ -47,7 +47,7 @@ public class PlayerLocomotion : MonoBehaviour
             playerContainer = gameObject.transform.Find("Container3P");
             cameraContainer = playerContainer.transform.Find("Camera3PContainer");
         }
-        
+
     }
 
     void Locomotion()
@@ -84,7 +84,7 @@ public class PlayerLocomotion : MonoBehaviour
         rotateY -= Input.GetAxis("Mouse Y") * mouseSensitivity;
 
         transform.Rotate(0f, rotateX, 0f);
-        rotateY = Mathf.Clamp(rotateY,lookUpClamp, lookDownClamp);
+        rotateY = Mathf.Clamp(rotateY, lookUpClamp, lookDownClamp);
 
         cameraContainer.transform.localRotation = Quaternion.Euler(rotateY, 0f, 0f);
     }
@@ -94,9 +94,9 @@ public class PlayerLocomotion : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             SwitchPerspective switchPerspective = GetComponent<SwitchPerspective>();
-            if(switchPerspective != null)
+            if (switchPerspective != null)
             {
-                if(switchPerspective.GetPerspective() == SwitchPerspective.Perspective.First)
+                if (switchPerspective.GetPerspective() == SwitchPerspective.Perspective.First)
                 {
                     switchPerspective.SetPerspective(SwitchPerspective.Perspective.Third);
 
@@ -110,7 +110,6 @@ public class PlayerLocomotion : MonoBehaviour
             }
         }
     }
-
 
 }
 

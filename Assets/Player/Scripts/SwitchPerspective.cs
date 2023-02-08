@@ -9,7 +9,7 @@ public class SwitchPerspective : MonoBehaviour
         First,
         Third
     };
-    
+
     public enum ContainerName
     {
         Container1P,
@@ -18,7 +18,7 @@ public class SwitchPerspective : MonoBehaviour
 
     [SerializeField]
     Perspective perspective = Perspective.Third;
-    
+
     Dictionary<Perspective, ContainerName> containerNameByPerspective = new Dictionary<Perspective, ContainerName>();
     Dictionary<ContainerName, Transform> containerByName = new Dictionary<ContainerName, Transform>();
 
@@ -28,7 +28,7 @@ public class SwitchPerspective : MonoBehaviour
         PerspectiveSwitch(perspective);
     }
 
-   void IntialiseContainers()
+    void IntialiseContainers()
     {
         containerNameByPerspective.Add(Perspective.First, ContainerName.Container1P);
         containerNameByPerspective.Add(Perspective.Third, ContainerName.Container3P);
@@ -39,7 +39,7 @@ public class SwitchPerspective : MonoBehaviour
 
     void DisableAllContainers()
     {
-        foreach(KeyValuePair<ContainerName, Transform> container in containerByName)
+        foreach (KeyValuePair<ContainerName, Transform> container in containerByName)
         {
             container.Value.gameObject.SetActive(false);
         }
@@ -48,16 +48,16 @@ public class SwitchPerspective : MonoBehaviour
     void ActivatePerspective(Perspective perspective)
     {
         ContainerName container;
-        if(containerNameByPerspective.TryGetValue(perspective, out container))
+        if (containerNameByPerspective.TryGetValue(perspective, out container))
         {
-            if(containerByName.TryGetValue(container, out Transform transform))
+            if (containerByName.TryGetValue(container, out Transform transform))
             {
                 transform.gameObject.SetActive(true);
             }
         }
     }
 
-    public  void PerspectiveSwitch(Perspective perspective)
+    public void PerspectiveSwitch(Perspective perspective)
     {
         DisableAllContainers();
         ActivatePerspective(perspective);
@@ -69,7 +69,7 @@ public class SwitchPerspective : MonoBehaviour
 
     public void SetPerspective(Perspective perspective)
     {
-        if(this.perspective == perspective)
+        if (this.perspective == perspective)
         {
             return;
         }

@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 9036689556350092006}
   - component: {fileID: 9036689556350092005}
   - component: {fileID: 9036689556350092004}
-  - component: {fileID: 9036689556350092007}
+  - component: {fileID: 7086267777339486761}
   m_Layer: 6
   m_Name: PlayerObject
   m_TagString: Player
@@ -501,7 +501,7 @@ MonoBehaviour:
   gravity: 20
   lookUpClamp: -30
   lookDownClamp: 60
---- !u!114 &9036689556350092007
+--- !u!114 &7086267777339486761
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02795b311f5452d41b759c819e9f576e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perspective: 0
+  perspective: 1
 --- !u!1 &9036689556528654799
 GameObject:
   m_ObjectHideFlags: 0
