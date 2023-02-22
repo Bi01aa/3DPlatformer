@@ -1371,6 +1371,10 @@ PrefabInstance:
       value: ExitButton
       objectReference: {fileID: 0}
     - target: {fileID: 8261346944970638624, guid: d9ee21d5e8561ee4ca59ca2ed166e724, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261346944970638624, guid: d9ee21d5e8561ee4ca59ca2ed166e724, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
