@@ -12,6 +12,9 @@ public class MenuController : MonoBehaviour
     [Tooltip("Drag in an options menu panel, if one exists")]
     [SerializeField] GameObject optionsMenuPanel;
 
+    [Tooltip("Drag in an high scores panel, if one exists")]
+    [SerializeField] GameObject highScoresPanel;
+
     [Tooltip("Drag in a pause menu panel, if one exists")]
     [SerializeField] GameObject pauseMenuPanel;
 
@@ -31,6 +34,17 @@ public class MenuController : MonoBehaviour
     public void OptionsMenuOpen()
     {
         optionsMenuPanel.SetActive(true);
+    }
+
+    public void HighScoreMenuClose()
+    {
+        highScoresPanel.SetActive(false);
+    }
+
+    public void HighScoreMenuOpen()
+    {
+        highScoresPanel.GetComponent<HighScoreSystem>().UpdateHighScoreUI();
+        highScoresPanel.SetActive(true);
     }
 
     void PauseMenu()

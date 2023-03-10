@@ -23,6 +23,7 @@ public class Item : MonoBehaviour
     int quanity = 1;
     [SerializeField]
     int maxStackableQuantity = 1;
+    public int pointValue = 1;
 
     [SerializeField]
     bool isStorable = false;
@@ -78,9 +79,10 @@ public class Item : MonoBehaviour
 
     void Use()
     {
-        Debug.Log("Using" + transform.name);
+        
         if (isConsumable)
         {
+            GameManager.IncrementScore(pointValue);
             quanity--;
             if(quanity <= 0)
             {

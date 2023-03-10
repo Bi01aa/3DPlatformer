@@ -8,6 +8,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreValue;
     [SerializeField] TextMeshProUGUI timeValue;
 
+    [SerializeField] GameObject gameOverPanel;
+    [SerializeField] TextMeshProUGUI endScoreValue;
+
 
     void Start()
     {
@@ -27,6 +30,12 @@ public class UIManager : MonoBehaviour
 
     }
 
+    public void ActivateEndGame(int score)
+    {
+        endScoreValue.text = score.ToString("D5");
+        gameOverPanel.SetActive(true);
+        Cursor.visible = true;
+    }
 
 
 
